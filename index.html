@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Passwords &amp; QR</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Passwords &amp; QR">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#14302a">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAACLElEQVR42u3dvW3CQBiA4TjyCM4QOI1ZIFWGoaFkCkoahkmVBagihsgSKULJIVm64/6ep0zhHNarD3HyzzAt8wvc8+oUIA7EgTgQB+JAHIgDcSAOxAHiQByIA3EgDsSBOBAH4kAcIA7EgTgQB+JAHIgDcdCaMd2hfy8/VZyCt+17k+s3OfC1gjgQB+JAHIiD7ozP/5fpfpc/Fmvfovb1mxyIA3EgDsSBOBAHzRrLWcrmuI9ynOvhZP0mB+JAHIgDcSAOxIE4QByIA3EgDsSBOBAH4kAciAPEgTgQB+JAHORW0H0r5dyv0ef6TQ7EgTgQB+JAHIiD6mXY56jlPSatrt/kQByIA3EgDsSBOGjWMC2zs4DJgTgQB+JAHIgDcdCChNdz1HLdQ+g9saW9hza0nnTvuTU5EAfiQByIA3EgDiqT4b6VdL/LH0u975Lrc5kciANxIA7EgTgQB9wU9BzSzXEf5Tixngeaet8i9HnLeZ6pyYE4EAfiQByIA3FQmdEpCIl1n0is4zz/ehGTA3EgDsSBOBAH4qAy9jmC1j63Y+0+ROh6ju/PXZTjmxyIA3EgDsSBOBAH3Slon6Oc+zX+9fP+WJMDcSAOxIE4EAfioBEZ9jlq3z9Ye53Hx9f57t+D+zqX3arje98KvlYQB+JAHIgDccDNMC2zs4DJgTgQB+JAHIgDcSAOxIE4QByIA3EgDsSBOBAH4kAciAPEgTgQB+JAHIgDcSAOxEEf/gA5EU8NLL1YIwAAAABJRU5ErkJggg==">
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAACLElEQVR42u3dvW3CQBiA4TjyCM4QOI1ZIFWGoaFkCkoahkmVBagihsgSKULJIVm64/6ep0zhHNarD3HyzzAt8wvc8+oUIA7EgTgQB+JAHIgDcSAOxAHiQByIA3EgDsSBOBAH4kAcIA7EgTgQB+JAHIgDcdCaMd2hfy8/VZyCt+17k+s3OfC1gjgQB+JAHIiD7ozP/5fpfpc/Fmvfovb1mxyIA3EgDsSBOBAHzRrLWcrmuI9ynOvhZP0mB+JAHIgDcSAOxIE4QByIA3EgDsSBOBAH4kAciAPEgTgQB+JAHORW0H0r5dyv0ef6TQ7EgTgQB+JAHIiD6mXY56jlPSatrt/kQByIA3EgDsSBOGjWMC2zs4DJgTgQB+JAHIgDcdCChNdz1HLdQ+g9saW9hza0nnTvuTU5EAfiQByIA3EgDiqT4b6VdL/LH0u975Lrc5kciANxIA7EgTgQB9wU9BzSzXEf5Tixngeaet8i9HnLeZ6pyYE4EAfiQByIA3FQmdEpCIl1n0is4zz/ehGTA3EgDsSBOBAH4qAy9jmC1j63Y+0+ROh6ju/PXZTjmxyIA3EgDsSBOBAH3Slon6Oc+zX+9fP+WJMDcSAOxIE4EAfioBEZ9jlq3z9Ye53Hx9f57t+D+zqX3arje98KvlYQB+JAHIgDccDNMC2zs4DJgTgQB+JAHIgDcSAOxIE4QByIA3EgDsSBOBAH4kAciAPEgTgQB+JAHIgDcSAOxEEf/gA5EU8NLL1YIwAAAABJRU5ErkJggg==">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<style>
+:root{--bg:#eef2ee;--surface:#ffffff;--ink:#14302a;--muted:#6a7d77;--line:#d5dfd9;--accent:#2f9e7e;--accent-ink:#ffffff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1b18;--surface:#17282a;--ink:#e8f1ec;--muted:#8da39b;--line:#27403c;--accent:#3dbb97;--accent-ink:#0f1b18;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1b18;--surface:#17282a;--ink:#e8f1ec;--muted:#8da39b;--line:#27403c;--accent:#3dbb97;--accent-ink:#0f1b18;color-scheme:dark}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:var(--bg);color:var(--ink);font-family:"Bricolage Grotesque",system-ui,-apple-system,sans-serif;line-height:1.35}
+main{height:100%;max-width:520px;margin:0 auto;padding:12px 14px 14px;display:flex;flex-direction:column;gap:10px}
+.hidden{display:none!important}
+.tabs{display:flex;gap:6px;background:var(--surface);padding:5px;border-radius:14px}
+.tabs button{flex:1;font:inherit;font-weight:600;font-size:16px;padding:11px;border:0;border-radius:10px;background:transparent;color:var(--muted);cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--ink);color:var(--bg)}
+.card{flex:1;min-height:0;display:flex;flex-direction:column;gap:12px;background:var(--surface);border-radius:18px;padding:14px}
+button:focus-visible,input:focus-visible,select:focus-visible,.chip input:focus-visible+span{outline:3px solid var(--accent);outline-offset:2px}
+.pw{flex:1;min-height:90px;display:flex;align-items:center;font-family:ui-monospace,Menlo,monospace;font-size:22px;word-break:break-all;padding:14px;border-radius:12px;background:var(--bg)}
+.meterrow{display:flex;align-items:center;gap:10px}
+.meter{flex:1;height:8px;border-radius:4px;background:var(--line);overflow:hidden}
+.meter i{display:block;height:100%;width:0;transition:width .2s,background .2s}
+.mlabel{font-size:14px;color:var(--muted);min-width:86px;text-align:right}
+.row{display:flex;gap:8px}
+.btn{flex:1;font:inherit;font-weight:600;font-size:16px;padding:13px;border:0;border-radius:12px;background:var(--accent);color:var(--accent-ink);cursor:pointer}
+.btn.alt{background:var(--bg);color:var(--ink)}
+.btn:disabled{opacity:.4;cursor:default}
+.lenrow{display:flex;align-items:center;gap:12px}
+.lenrow strong{min-width:28px;font-size:20px}
+input[type=range]{flex:1;accent-color:var(--accent);margin:0}
+.chips{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.chip{position:relative;display:block}
+.chip input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.chip span{display:flex;align-items:center;justify-content:center;padding:12px 8px;border-radius:12px;background:var(--bg);color:var(--muted);font-weight:600;font-size:15px;text-align:center;pointer-events:none}
+.chip input:checked+span{background:var(--accent);color:var(--accent-ink)}
+.wide{grid-column:1/-1}
+.field input[type=text],.field select,.field input{width:100%;font:inherit;font-size:16px;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink)}
+.two{display:grid;grid-template-columns:1fr auto;gap:8px}
+.two .chip span{padding:12px 14px;height:100%;white-space:nowrap}
+.qrwrap{flex:1;min-height:0;display:flex;flex-direction:column}
+#printarea{flex:1;min-height:0;display:flex;flex-direction:column}
+.qrbox{flex:1;min-height:0;display:flex;justify-content:center;align-items:center}
+.qrbox svg{height:100%;max-height:100%;width:auto;max-width:100%;aspect-ratio:1/1}
+.ptitle,.pnote{display:none}
+.qnote{flex:1;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--muted);padding:0 20px}
+@media print{body{background:#fff!important;color:#000!important}body *{visibility:hidden}#printarea,#printarea *{visibility:visible}#printarea{position:absolute;left:0;top:0;width:100%;display:block;text-align:center}.ptitle{display:block;font-size:28px;font-weight:800;margin:24px 0 8px;color:#000}.pnote{display:block;font-size:16px;color:#000}.qrbox{display:block}.qrbox svg{width:360px;height:auto}}
+@media (prefers-reduced-motion:reduce){.meter i{transition:none}}
+</style>
+</head>
+<body>
+<main>
+  <div class="tabs" role="tablist">
+    <button role="tab" id="t1" aria-selected="true">Password</button>
+    <button role="tab" id="t2" aria-selected="false">WiFi QR code</button>
+  </div>
+
+  <section id="p1" class="card">
+    <div class="pw" id="pw" aria-live="polite"></div>
+    <div class="meterrow"><div class="meter"><i id="bar"></i></div><div class="mlabel" id="ml"></div></div>
+    <div class="row">
+      <button class="btn" id="copy">Copy</button>
+      <button class="btn alt" id="regen">New password</button>
+    </div>
+    <div class="lenrow"><strong id="lenv">16</strong><input type="range" id="len" min="8" max="64" value="16" aria-label="Password length"></div>
+    <div class="chips">
+      <label class="chip"><input type="checkbox" id="lo" checked><span>a–z</span></label>
+      <label class="chip"><input type="checkbox" id="up" checked><span>A–Z</span></label>
+      <label class="chip"><input type="checkbox" id="di" checked><span>0–9</span></label>
+      <label class="chip"><input type="checkbox" id="sy" checked><span>!@#$</span></label>
+      <label class="chip wide"><input type="checkbox" id="am"><span>No look-alike characters (0 O 1 l I)</span></label>
+    </div>
+  </section>
+
+  <section id="p2" class="card hidden">
+    <div class="field"><input type="text" id="ssid" placeholder="Network name (SSID)" aria-label="Network name" autocomplete="off" autocapitalize="off" spellcheck="false"></div>
+    <div class="field"><input type="text" id="wpw" placeholder="Network password" aria-label="Network password" autocomplete="off" autocapitalize="off" spellcheck="false"></div>
+    <div class="two field">
+      <select id="enc" aria-label="Security"><option value="WPA">WPA/WPA2/WPA3</option><option value="WEP">WEP</option><option value="nopass">No password</option></select>
+      <label class="chip"><input type="checkbox" id="hid"><span>Hidden network</span></label>
+    </div>
+    <div class="qrwrap">
+      <div id="printarea" class="hidden"><div class="ptitle" id="ptitle"></div><div class="qrbox" id="qr"></div><div class="pnote">Point your phone camera at the code to join the network.</div></div>
+      <div class="qnote" id="qnote">Enter a network name to see the QR code.</div>
+    </div>
+    <div class="row">
+      <button class="btn" id="savePng" disabled>Save image</button>
+      <button class="btn alt" id="printBtn" disabled>Print</button>
+    </div>
+  </section>
+</main>
+<script>
+var $=function(i){return document.getElementById(i);};
+var SETS={lo:"abcdefghijklmnopqrstuvwxyz",up:"ABCDEFGHIJKLMNOPQRSTUVWXYZ",di:"0123456789",sy:"!@#$%^&*()-_=+[]{};:,.?/"};
+var AMB="0O1lI|";
+function rnd(n){var a=new Uint32Array(1),lim=Math.floor(4294967296/n)*n;do{crypto.getRandomValues(a);}while(a[0]>=lim);return a[0]%n;}
+function pool(k){var s=SETS[k];if($("am").checked)s=s.split("").filter(function(c){return AMB.indexOf(c)<0;}).join("");return s;}
+var cur="";
+function gen(){
+  var keys=["lo","up","di","sy"].filter(function(k){return $(k).checked;});
+  var len=+$("len").value;
+  if(!keys.length){cur="";$("pw").textContent="Select at least one character group.";$("bar").style.width="0";$("ml").textContent="";return;}
+  var sets=keys.map(pool),all=sets.join("");
+  var out=sets.map(function(s){return s[rnd(s.length)];});
+  while(out.length<len){out.push(all[rnd(all.length)]);}
+  for(var i=out.length-1;i>0;i--){var j=rnd(i+1),t=out[i];out[i]=out[j];out[j]=t;}
+  cur=out.join("");$("pw").textContent=cur;
+  var bits=Math.round(len*Math.log(all.length)/Math.LN2),lab,col,w;
+  if(bits<50){lab="Weak";col="#d9483b";w=25;}else if(bits<75){lab="Fair";col="#e0a21b";w=50;}else if(bits<100){lab="Strong";col="#6bb04a";w=75;}else{lab="Very strong";col="#2f9e7e";w=100;}
+  $("bar").style.width=w+"%";$("bar").style.background=col;$("ml").textContent=lab;
+}
+function copyText(t,btn){var o=btn.textContent;var done=function(){btn.textContent="Copied";setTimeout(function(){btn.textContent=o;},1400);};
+  var fb=function(){var ta=document.createElement("textarea");ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand("copy");done();}catch(e){}document.body.removeChild(ta);};
+  try{navigator.clipboard.writeText(t).then(done,fb);}catch(e){fb();}}
+["len","lo","up","di","sy","am"].forEach(function(i){$(i).addEventListener("input",function(){$("lenv").textContent=$("len").value;gen();});});
+$("regen").addEventListener("click",gen);
+$("copy").addEventListener("click",function(){if(cur)copyText(cur,$("copy"));});
+function tab(n){$("p1").classList.toggle("hidden",n!==1);$("p2").classList.toggle("hidden",n!==2);
+  $("t1").setAttribute("aria-selected",n===1);$("t2").setAttribute("aria-selected",n===2);}
+$("t1").addEventListener("click",function(){tab(1);});$("t2").addEventListener("click",function(){tab(2);});
+function esc(s){return s.replace(/([\\;,:"])/g,"\\$1");}
+var lastQ=null;
+function setActions(on){$("savePng").disabled=!on;$("printBtn").disabled=!on;}
+function qr(){
+  var ssid=$("ssid").value,enc=$("enc").value;
+  $("wpw").disabled=enc==="nopass";$("wpw").style.opacity=enc==="nopass"?".5":"1";
+  function empty(msg){lastQ=null;setActions(false);$("qr").innerHTML="";$("printarea").classList.add("hidden");$("qnote").classList.remove("hidden");$("qnote").textContent=msg;}
+  if(!ssid){empty("Enter a network name to see the QR code.");return;}
+  var s="WIFI:T:"+enc+";S:"+esc(ssid)+";"+(enc==="nopass"?"":"P:"+esc($("wpw").value)+";")+($("hid").checked?"H:true;":"")+";";
+  if(typeof qrcode!=="function"){empty("The QR library did not load. Check your connection and reload.");return;}
+  try{
+    var q=qrcode(0,"M");q.addData(s);q.make();lastQ=q;
+    var n=q.getModuleCount(),m=4,p="";
+    for(var r=0;r<n;r++)for(var c=0;c<n;c++)if(q.isDark(r,c))p+="M"+(c+m)+" "+(r+m)+"h1v1h-1z";
+    var z=n+2*m;
+    $("qr").innerHTML='<svg viewBox="0 0 '+z+' '+z+'" shape-rendering="crispEdges" role="img" aria-label="WiFi QR code"><rect width="'+z+'" height="'+z+'" rx="2" fill="#fff"/><path d="'+p+'" fill="#000"/></svg>';
+    $("ptitle").textContent="WiFi: "+ssid;
+    $("printarea").classList.remove("hidden");$("qnote").classList.add("hidden");setActions(true);
+  }catch(e){empty("The text is too long for a QR code.");}
+}
+function pngBlob(cb){var q=lastQ,n=q.getModuleCount(),m=4,s=Math.max(8,Math.floor(1200/(n+2*m))),sz=(n+2*m)*s;
+  var cv=document.createElement("canvas");cv.width=cv.height=sz;var x=cv.getContext("2d");
+  x.fillStyle="#fff";x.fillRect(0,0,sz,sz);x.fillStyle="#000";
+  for(var r=0;r<n;r++)for(var c=0;c<n;c++)if(q.isDark(r,c))x.fillRect((c+m)*s,(r+m)*s,s,s);
+  cv.toBlob(cb,"image/png");}
+function saveFallback(b,name,say){
+  try{var f=new File([b],name,{type:"image/png"});
+    if(navigator.canShare&&navigator.canShare({files:[f]})){navigator.share({files:[f]}).then(function(){say("Saved");},function(){});return;}}catch(e){}
+  try{var a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=name;document.body.appendChild(a);a.click();document.body.removeChild(a);say("Saved");}catch(e){say("Save failed");}
+}
+$("savePng").addEventListener("click",function(){
+  if(!lastQ)return;var btn=$("savePng"),old=btn.textContent;
+  var say=function(t){btn.textContent=t;setTimeout(function(){btn.textContent=old;},1800);};
+  var nm="wifi-qr-"+($("ssid").value.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")||"siet")+".png";
+  pngBlob(function(b){
+    var viaClaude=(window.claude&&claude.use)?claude.use("downloads"):Promise.resolve(null);
+    viaClaude.then(function(d){
+      if(!d){saveFallback(b,nm,say);return;}
+      d.save({filename:nm,data:b}).then(function(){say("Saved");},function(e){if(!e||e.code!=="declined")say("Save failed");});
+    },function(){saveFallback(b,nm,say);});
+  });
+});
+$("printBtn").addEventListener("click",function(){try{window.print();}catch(e){}});
+["ssid","wpw","enc","hid"].forEach(function(i){$(i).addEventListener("input",qr);$(i).addEventListener("change",qr);});
+gen();qr();
+</script>
+</body>
+</html>
